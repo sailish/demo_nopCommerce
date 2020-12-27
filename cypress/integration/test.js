@@ -1,6 +1,7 @@
 ///<reference types="cypress"/>
 
 import RegisterPage from "./PageObject/RegisterPage"
+import HomePage from "./PageObject/HomePage"
 
 
 describe('Registration', function () {
@@ -42,14 +43,16 @@ describe('Registration', function () {
     it("register", function () {
 
         var rp= new RegisterPage()
+        var hp= new HomePage()
         
         
         // userDatas.forEach(userData=>{
             rp.register()
             rp.checkTitle()
-            rp.enterUserValues(userDatas[0])
-            rp.registerUser()    
-            // })
+            rp.enterUserValues(userDatas[1])
+            rp.registerUser()  
+            rp.logout()
+        // })
         
 
 
