@@ -49,14 +49,14 @@ describe('Registration', function () {
         // userDatas.forEach(userData=>{
             rp.register()
             rp.checkTitle()
-            rp.enterUserValues(userDatas[1])
+            rp.enterUserValues(userDatas[0])
             rp.registerUser()  
-            rp.logout()
+            hp.logout()
         // })
         
 
 
 
-
+ 
     })
 })

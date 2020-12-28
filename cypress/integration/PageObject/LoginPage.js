@@ -1,10 +1,20 @@
 ///<reference types="cypress"/>
+import BasePage from './BasePage'
 
-class RegisterPage
+class LoginPage
 {
-visit()
+loginScreen()
 {
-    cy.visit("https://demo.nopcommerce.com/")
+   var bp= new BasePage()
+   bp.visit()
+   cy.get('.ico-login').click() 
+   cy.title().should('eq','nopCommerce demo store. Login')
+
+}
+
+enterNullData(locator, value) {
+    cy.get(locator).should('be.visible').type(value)
+    return this
 }
 
 }
