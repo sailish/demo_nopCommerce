@@ -5,8 +5,8 @@ class HomePage
 {
 logout()
 {
-    var bp=new BasePage()
-    bp.visit()
+    // var bp=new BasePage()
+    // bp.visit()
     cy.get('.ico-logout').click()
     }
 }

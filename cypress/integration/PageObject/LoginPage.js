@@ -26,7 +26,7 @@ enterNullData()
     this.enterInputValue("#Password"," ")
     this.LoginUser()
     cy.wait(500)
-    cy.get('#Email-error').should('have.value','Please enter your email')
+    cy.get('#Email-error').contains('Please enter your email')
     return this
 }
 
@@ -35,18 +35,29 @@ enterValidCredentials(dataSet)
     this.loginTitle()
     this.enterInputValue("#Email", dataSet.email)
     this.enterInputValue("#Password", dataSet.password)
+    cy.wait(500)
     this.LoginUser()
-
+    cy.wait(500)
+}
+enterInvalidEmail() 
+{
+    this.loginTitle()
+    this.enterInputValue("#Email","adghka")
+    this.enterInputValue("#Password", "agdj")
+    this.LoginUser()
+    cy.wait(500)
+    cy.get('#Email-error').contains('Wrong email')
+    return this
 }
 
 enterInvalidCredentials() 
 {
     this.loginTitle()
-    this.enterInputValue("#Email","adghkas")
+    this.enterInputValue("#Email","adghkas@getnada.com")
     this.enterInputValue("#Password", "agdj")
     this.LoginUser()
     cy.wait(500)
-    cy.get('#Email-error').should('have.value','Login was unsuccessful. Please correct the errors and try again.')
+    cy.get('.message-error').contains('Login was unsuccessful. Please correct the errors and try again.')
     return this
 }
 
