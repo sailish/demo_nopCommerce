@@ -35,6 +35,7 @@ class RegisterPage {
     }
 
     enterInputValue(locator, value) {
+        cy.log(value)
         cy.get(locator).should('be.visible').type(value)
         return this
     }

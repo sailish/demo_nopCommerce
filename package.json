@@ -9,6 +9,7 @@
   "author": "Sailish",
   "license": "ISC",
   "devDependencies": {
+    "csvdata": "^1.1.1",
     "cypress": "^6.2.0"
   }
 }

@@ -4,8 +4,8 @@ class BasePage
 {
 visit()
 {
-    cy.visit("https://demo.nopcommerce.com/")
-}
+    cy.visit("https://demo.nopcommerce.com/") 
+    }
 
 }
 

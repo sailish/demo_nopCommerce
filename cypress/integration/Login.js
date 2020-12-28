@@ -1,10 +1,10 @@
 ///<reference types="cypress"/>
 
-import RegisterPage from "./PageObject/RegisterPage"
+import LoginPage from "./PageObject/LoginPage"
 import HomePage from "./PageObject/HomePage"
 
 
-describe('Registration', function () {
+describe('Login', function () {
     let userDatas = []
     before(function () {
         cy.fixture("userData").then(user => { //all data unmanaged
@@ -40,23 +40,26 @@ describe('Registration', function () {
         })
     })
 
-    it("register", function () {
+    it("login", function () {
 
-        var rp= new RegisterPage()
+        var lp= new LoginPage()
         var hp= new HomePage()
+        lp.enterNullData()
+        lp.enterInvalidCredentials()
         
         
-        // userDatas.forEach(userData=>{
-            rp.register()
-            rp.checkTitle()
-            rp.enterUserValues(userDatas[0])
-            rp.registerUser()  
-            hp.logout()
-        // })
+        userDatas.forEach(userData=>{
+           
+           lp.enterValidCredentials(userData)
+           lp.LoginUser()
+           hp.logout()
+        })
         
 
 
 
  
     })
+
+   
 })
