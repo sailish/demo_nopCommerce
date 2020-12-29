@@ -38,6 +38,7 @@ enterValidCredentials(dataSet)
     cy.wait(500)
     this.LoginUser()
     cy.wait(500)
+    return this
 }
 enterInvalidEmail() 
 {

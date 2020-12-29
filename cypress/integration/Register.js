@@ -44,15 +44,16 @@ describe('Registration', function () {
 
         var rp= new RegisterPage()
         var hp= new HomePage()
+        rp.enterNullValues()
         
         
-        // userDatas.forEach(userData=>{
+        userDatas.forEach(userData=>{
             rp.register()
             rp.checkTitle()
-            rp.enterUserValues(userDatas[2])
+            rp.enterUserValues(userData)
             rp.registerUser()  
             hp.logout()
-        // })
+        })
 
 
  

@@ -9,8 +9,7 @@ describe('Login', function () {
     before(function () {
         cy.fixture("userData").then(user => { //all data unmanaged
             //    user.array.forEach(element => {
-            var datas = user.split('\r\n')
-            //data split per lines
+            var datas = user.split('\r\n')            //data split per lines
             var firstLine = true
             datas.forEach(line => { //for loop in data
 
@@ -44,16 +43,16 @@ describe('Login', function () {
 
         var lp = new LoginPage()
         var hp = new HomePage()
-        // lp.enterNullData()
-        // lp.enterInvalidEmail()
-        // lp.enterInvalidCredentials()
+        lp.enterNullData()
+        lp.enterInvalidEmail()
+        lp.enterInvalidCredentials()
 
 
-        // userDatas.forEach(userData => {
+        userDatas.forEach(userData => {
 
-            lp.enterValidCredentials(userDatas[2])
+            lp.enterValidCredentials(userData)
             hp.logout()
-        // })
+        })
 
 
 

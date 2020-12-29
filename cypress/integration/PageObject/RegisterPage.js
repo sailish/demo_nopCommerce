@@ -34,6 +34,16 @@ class RegisterPage {
         this.enterDropDownValue("[name=DateOfBirthYear]", dataSet.year)
     }
 
+    enterNullValues() {
+        this.register()
+        this.registerUser()
+        cy.get('#FirstName-error').contains('First name is required.')
+        cy.get('#LastName-error').contains('Last name is required.')
+        cy.get('#Email-error').contains('Email is required.')
+        cy.get('#Password-error').contains('Password is required.')
+        cy.get('#ConfirmPassword-error').contains('Password is required.')
+    }
+
     enterInputValue(locator, value) {
         cy.log(locator)
         cy.log(value)
@@ -50,11 +60,10 @@ class RegisterPage {
         cy.get(locator).select(value)
     }
 
-    registerUser()
-    {
+    registerUser() {
         cy.get('#register-button').should('be.visible').click()
     }
-    
+
 
 }
 
