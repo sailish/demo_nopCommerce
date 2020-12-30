@@ -6,11 +6,8 @@ class RegisterPage {
         var basePage = new BasePage()
         basePage.visit()
         cy.get(".ico-register").click()
-
-    }
-
-    checkTitle() {
         cy.title().should("eq", "nopCommerce demo store. Register")
+        cy.log('Redirect to register page successful')
     }
 
     enterUserValues(dataSet) {
@@ -24,14 +21,14 @@ class RegisterPage {
         this.enterInputValue("#LastName", dataSet.lastname)
         this.enterInputValue("#Email", dataSet.email)
         this.enterInputValue("#Company", dataSet.companyName)
-        cy.log(dataSet.password)
-        cy.log(dataSet.confirmPassword)
-
         this.enterInputValue("#Password", dataSet.password)
         this.enterInputValue("#ConfirmPassword", dataSet.confirmPassword)
         this.enterDropDownValue("[name=DateOfBirthDay]", dataSet.day)
         this.enterDropDownValue("[name=DateOfBirthMonth]", dataSet.month)
         this.enterDropDownValue("[name=DateOfBirthYear]", dataSet.year)
+        this.registerUser()
+        cy.get('.result').contains('Your registration completed')
+        cy.log('Registration successful; Passed')
     }
 
     enterNullValues() {
@@ -42,11 +39,10 @@ class RegisterPage {
         cy.get('#Email-error').contains('Email is required.')
         cy.get('#Password-error').contains('Password is required.')
         cy.get('#ConfirmPassword-error').contains('Password is required.')
+        cy.log('Null data registration error case passed')
     }
 
     enterInputValue(locator, value) {
-        cy.log(locator)
-        cy.log(value)
         cy.get(locator).should('be.visible').type(value)
         return this
     }
@@ -63,7 +59,6 @@ class RegisterPage {
     registerUser() {
         cy.get('#register-button').should('be.visible').click()
     }
-
 
 }
 

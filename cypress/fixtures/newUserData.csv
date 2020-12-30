@@ -1,6 +1,6 @@
 gender,firstname,lastname,day,month,year,email,companyName,Password,confirmPassword
-M,Luffy,Monkey,6,12,1993,luffy@getnada.com,whatsapp,123456,123456
-M,Roronoa,Zoro,6,12,1992,zoro@getnada.com,123456,123456
-M,Sanji,Vinsmoke,6,12,1991,sanji@getnada.com,123456,123456
-M,Tony,Chopper,6,12,1990,chopper@getnada.com,123456,123456
-F,Nico,Robin,6,12,1990,robin@getnada.com,123456,123456
+M,Luffy,Monkey,6,12,1993,luffym@getnada.com,whatsapp,123456,123456
+M,Roronoa,Zoro,6,12,1992,zoro@getnada.com,fb,123456,123456
+M,Sanji,Vinsmoke,6,12,1991,sanji@getnada.com,fb,123456,123456
+M,Tony,Chopper,6,12,1990,chopper@getnada.com,fb,123456,123456
+F,Nico,Robin,6,12,1990,robin@getnada.com,fb,123456,123456
