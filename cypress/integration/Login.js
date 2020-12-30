@@ -3,7 +3,6 @@
 import LoginPage from "./PageObject/LoginPage"
 import HomePage from "./PageObject/HomePage"
 
-
 describe('Login', function () {
     let userDatas = []
     before(function () {
@@ -14,7 +13,6 @@ describe('Login', function () {
             datas.forEach(line => { //for loop in data
 
                 if (!firstLine) {
-
                     var data = new Object()
                     var lines = line.split(",") //data of each line again split as per comma
                     data.gender = lines[0]
@@ -40,7 +38,6 @@ describe('Login', function () {
     })
 
     it("login", function () {
-
         var lp = new LoginPage()
         var hp = new HomePage()
         lp.enterNullData()
@@ -49,7 +46,6 @@ describe('Login', function () {
 
 
         userDatas.forEach(userData => {
-
             lp.enterValidCredentials(userData)
             hp.logout()
         })

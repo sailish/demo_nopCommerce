@@ -2,8 +2,7 @@
 import BasePage from './BasePage'
 
 class HomePage {
-    logout() 
-    {
+    logout() {
         cy.get('.ico-logout').click()
     }
 }

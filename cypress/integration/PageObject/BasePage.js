@@ -1,10 +1,8 @@
 ///<reference types="cypress"/>
 
-class BasePage
-{
-visit()
-{
-    cy.visit("https://demo.nopcommerce.com/") 
+class BasePage {
+    visit() {
+        cy.visit("https://demo.nopcommerce.com/")
     }
 
 }

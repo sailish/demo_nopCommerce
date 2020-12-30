@@ -3,7 +3,6 @@
 import RegisterPage from "./PageObject/RegisterPage"
 import HomePage from "./PageObject/HomePage"
 
-
 describe('Registration', function () {
     let userDatas = []
     before(function () {
@@ -15,7 +14,6 @@ describe('Registration', function () {
             datas.forEach(line => { //for loop in data
 
                 if (!firstLine) {
-
                     var data = new Object()
                     var lines = line.split(",") //data of each line again split as per comma
                     data.gender = lines[0]
@@ -28,7 +26,6 @@ describe('Registration', function () {
                     data.companyName=lines[7]
                     data.password=lines[8]
                     data.confirmPassword=lines[9]
-
                     userDatas.push(data) //data pushed in array
                 }
 
@@ -41,11 +38,9 @@ describe('Registration', function () {
     })
 
     it("register", function () {
-
         var rp= new RegisterPage()
         var hp= new HomePage()
-        rp.enterNullValues()
-        
+        rp.enterNullValues()        
         
         userDatas.forEach(userData=>{
             rp.register()
